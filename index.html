@@ -13,7 +13,7 @@
 
         body {
             background: #0a0c10;
-            font-family: 'Segoe UI', 'Cinema', 'Courier New', monospace;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
             color: #ece8e1;
             line-height: 1.5;
             display: flex;
@@ -25,14 +25,17 @@
             max-width: 1400px;
             margin: 0 auto;
             padding: 0 24px;
+            width: 100%;
         }
 
         .header {
             background: url('shapka.jpg') center/cover no-repeat;
-            border-bottom: 3px solid #8b0000;
+            border-bottom: 2px solid #8b0000;
             padding: 20px 0;
-            box-shadow: 0 8px 20px rgba(0,0,0,0.6);
             position: relative;
+            width: 100%;
+            background-size: cover;
+            background-position: center;
         }
         
         .header::before {
@@ -56,24 +59,63 @@
         }
 
         .logo-block img {
-            width: 70px;
+            width: 65px;
             height: auto;
             display: block;
-            border-radius: 12px;
-            box-shadow: 0 0 0 2px #8b0000, 0 0 0 5px #1f1f1f;
+            border-radius: 10px;
             background: #0a0c10;
+            box-shadow: 0 0 0 1px #8b0000, 0 0 0 3px #1f1f1f;
         }
 
         .site-title-block img {
-            height: 60px;
+            height: 55px;
             width: auto;
             display: block;
-            filter: drop-shadow(0 0 6px rgba(0,0,0,0.8));
+            filter: drop-shadow(0 0 4px rgba(0,0,0,0.5));
+        }
+
+        .nav-bar {
+            background: #0f0f13;
+            border-bottom: 1px solid #2c1a1a;
+            padding: 0;
+            margin: 0;
+        }
+        
+        .button-group {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2px;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+        
+        .dnd-btn {
+            background: transparent;
+            border: none;
+            color: #b4a88a;
+            padding: 14px 20px;
+            font-weight: 500;
+            font-size: 0.85rem;
+            cursor: pointer;
+            transition: all 0.2s;
+            font-family: inherit;
+            letter-spacing: 0.3px;
+        }
+        
+        .dnd-btn:hover {
+            color: #ffffff;
+            background: rgba(139, 0, 0, 0.3);
+        }
+        
+        .dnd-btn.active {
+            color: #ffffff;
+            border-bottom: 2px solid #8b0000;
         }
 
         .two-columns {
             display: flex;
-            gap: 30px;
+            gap: 40px;
             flex-wrap: wrap;
         }
         .main-content {
@@ -82,102 +124,91 @@
         }
         .sidebar {
             flex: 1;
-            min-width: 220px;
+            min-width: 240px;
         }
 
         .ready-characters {
             background: #0e0c12;
-            border-radius: 24px;
+            border-radius: 12px;
             padding: 20px;
-            border-left: 4px solid #8b0000;
+            border: 1px solid #2c1a1a;
             margin-top: 0;
-            position: sticky;
-            top: 20px;
         }
         .ready-characters h3 {
             color: #c0392b;
             margin-bottom: 16px;
-            font-size: 1.3rem;
+            font-size: 1.1rem;
+            font-weight: 600;
+            letter-spacing: 0.5px;
         }
         .ready-characters ul {
             list-style: none;
         }
         .ready-characters li {
-            padding: 12px 0;
-            border-bottom: 1px solid #2c1a1a;
+            padding: 10px 0;
+            border-bottom: 1px solid #1e1a1c;
             cursor: pointer;
             transition: all 0.2s;
-            font-size: 1.1rem;
+            font-size: 0.95rem;
+            color: #dbd0bc;
         }
         .ready-characters li:hover {
             color: #c0392b;
             padding-left: 8px;
         }
 
-        .nav-bar {
-            background: #0f0f13;
-            border-radius: 60px;
-            padding: 16px 20px;
-            margin: 30px 0 30px;
-            border: 1px solid #2c1a1a;
-            box-shadow: 0 8px 18px rgba(0,0,0,0.5);
-        }
-        .button-group {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 18px;
-            list-style: none;
-        }
-        .dnd-btn {
-            background: #1e1a1c;
-            border: 1px solid #6b2e2e;
-            color: #f0dbb2;
-            padding: 12px 28px;
-            font-weight: bold;
-            font-size: 1rem;
-            border-radius: 40px;
-            cursor: pointer;
-            transition: all 0.2s;
-            font-family: inherit;
-            letter-spacing: 1px;
-        }
-        .dnd-btn:hover, .dnd-btn.active {
-            background: #8b0000;
-            color: #fff;
-            border-color: #e0a800;
-            transform: scale(1.02);
-            box-shadow: 0 0 12px rgba(139,0,0,0.6);
-        }
-
         .content-panel {
             background: #0e0c12;
-            border-radius: 32px;
-            padding: 28px 24px;
-            margin: 0 0 40px 0;
-            border-left: 8px solid #8b0000;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.6);
+            border-radius: 12px;
+            padding: 28px 28px;
+            margin: 40px 0;
+            border: 1px solid #2c1a1a;
+            border-left: 2px solid #a52a2a;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.3);
         }
         .page-title {
             color: #c0392b;
-            font-size: 1.8rem;
-            border-bottom: 2px dashed #8b0000;
-            display: inline-block;
-            margin-bottom: 20px;
-            font-weight: bold;
+            font-size: 1.5rem;
+            border-bottom: 1px solid #2c1a1a;
+            padding-bottom: 12px;
+            margin-bottom: 24px;
+            font-weight: 500;
+            letter-spacing: -0.3px;
         }
         .page-content-text {
-            font-size: 1.05rem;
-            line-height: 1.5;
+            font-size: 0.95rem;
+            line-height: 1.6;
             color: #dbd0bc;
         }
-        .info-tip {
-            background: #1f1818;
-            padding: 12px;
-            border-radius: 20px;
-            margin-top: 20px;
-            font-style: italic;
-            color: #c9ae74;
+
+        .filter-bar {
+            background: #0f0f13;
+            border-radius: 8px;
+            padding: 8px;
+            margin-bottom: 24px;
+            display: flex;
+            gap: 6px;
+            flex-wrap: wrap;
+            border: 1px solid #2c1a1a;
+        }
+        .filter-btn {
+            background: transparent;
+            border: none;
+            color: #b4a88a;
+            padding: 6px 16px;
+            font-size: 0.8rem;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: all 0.2s;
+            font-family: inherit;
+        }
+        .filter-btn:hover {
+            background: #1e1a1c;
+            color: #ece8e1;
+        }
+        .filter-btn.active {
+            background: #8b0000;
+            color: #ffffff;
         }
 
         .items-grid {
@@ -187,62 +218,64 @@
             margin-top: 20px;
         }
         .item-card {
-            background: #121212;
+            background: #0f0f13;
             border: 1px solid #2c1a1a;
-            border-radius: 20px;
+            border-radius: 10px;
             overflow: hidden;
             cursor: pointer;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+            transition: all 0.2s ease;
         }
         .item-card:hover {
-            transform: translateY(-5px);
+            transform: translateY(-3px);
             border-color: #8b0000;
-            box-shadow: 0 8px 20px rgba(139,0,0,0.3);
+            box-shadow: 0 6px 16px rgba(139, 0, 0, 0.2);
         }
         .item-image {
             width: 100%;
-            height: 250px;
+            height: 220px;
             object-fit: contain;
-            background: #0a0a0c;
+            background: #0a0c10;
             padding: 16px;
             display: block;
         }
         .item-name {
-            background: #1a1a1a;
-            padding: 16px;
+            background: #0f0f13;
+            padding: 14px;
             text-align: center;
-            font-size: 1.4rem;
-            font-weight: bold;
+            font-size: 1.1rem;
+            font-weight: 500;
             color: #c0392b;
             border-top: 1px solid #2c1a1a;
         }
         .item-description {
             max-height: 0;
             overflow: hidden;
-            transition: max-height 0.4s ease-out;
-            background: #0a0a0c;
-            padding: 0 16px;
+            transition: max-height 0.35s ease-out;
+            background: #0a0c10;
+            padding: 0 14px;
         }
         .item-description.show {
-            max-height: 400px;
-            padding: 16px;
-            border-top: 1px solid #8b0000;
+            max-height: 380px;
+            padding: 14px;
+            border-top: 1px solid #2c1a1a;
         }
         .item-description p {
-            margin: 8px 0;
+            margin: 6px 0;
             color: #dbd0bc;
-            line-height: 1.4;
+            line-height: 1.5;
+            font-size: 0.85rem;
         }
         .item-description strong {
             color: #c0392b;
+            font-weight: 600;
         }
 
         .contacts-info {
-            background: #121212;
+            background: #0f0f13;
             padding: 24px;
-            border-radius: 24px;
+            border-radius: 10px;
             margin-top: 16px;
+            border: 1px solid #2c1a1a;
         }
         .contacts-info p {
             margin: 12px 0;
@@ -259,43 +292,37 @@
             margin: 40px 0 30px;
         }
         .hero-card {
-            background: #12161c;
-            border-radius: 40px;
+            background: #0f0f13;
+            border-radius: 12px;
             border: 1px solid #2c1a1a;
             overflow: hidden;
             display: flex;
             justify-content: center;
             align-items: center;
             padding: 20px;
-            background-image: radial-gradient(circle at 10% 20%, #1e1915 0%, #0b0b0e 90%);
         }
         .hero-image {
             max-width: 100%;
-            max-height: 400px;
+            max-height: 380px;
             width: auto;
             height: auto;
-            border-radius: 28px;
-            border: 2px solid #8b0000;
-            box-shadow: 0 20px 30px -10px black;
+            border-radius: 8px;
             display: block;
             object-fit: contain;
         }
 
         footer {
             text-align: center;
-            padding: 32px 0 24px;
+            padding: 28px 0 24px;
             border-top: 1px solid #2c1a1a;
             margin-top: 20px;
             color: #7a6a5c;
+            font-size: 0.75rem;
         }
 
         @media (max-width: 900px) {
             .two-columns {
                 flex-direction: column;
-            }
-            .ready-characters {
-                position: static;
-                margin-top: 20px;
             }
         }
         @media (max-width: 750px) {
@@ -304,14 +331,14 @@
                 text-align: center;
             }
             .dnd-btn {
-                padding: 8px 16px;
-                font-size: 0.8rem;
+                padding: 10px 14px;
+                font-size: 0.75rem;
             }
             .items-grid {
                 grid-template-columns: 1fr;
             }
             .hero-image {
-                max-height: 250px;
+                max-height: 200px;
             }
         }
     </style>
@@ -329,22 +356,24 @@
     </div>
 </header>
 
-<main class="container">
-    <div class="nav-bar">
+<div class="nav-bar">
+    <div class="container">
         <ul class="button-group">
-            <li><button class="dnd-btn" data-section="home">🏠 ГЛАВНАЯ</button></li>
-            <li><button class="dnd-btn" data-section="newbie">📖 НОВИЧКАМ</button></li>
-            <li><button class="dnd-btn" data-section="classes">⚔️ КЛАССЫ</button></li>
-            <li><button class="dnd-btn" data-section="races">🧝 РАСЫ</button></li>
-            <li><button class="dnd-btn" data-section="contacts">📞 КОНТАКТЫ</button></li>
+            <li><button class="dnd-btn" data-section="home">ГЛАВНАЯ</button></li>
+            <li><button class="dnd-btn" data-section="newbie">НОВИЧКАМ</button></li>
+            <li><button class="dnd-btn" data-section="classes">КЛАССЫ</button></li>
+            <li><button class="dnd-btn" data-section="races">РАСЫ</button></li>
+            <li><button class="dnd-btn" data-section="contacts">КОНТАКТЫ</button></li>
         </ul>
     </div>
+</div>
 
+<main class="container">
     <div class="content-panel" id="dynamicContent"></div>
 
     <div class="hero-section">
         <div class="hero-card">
-            <img src="info.png" alt="Информация о D&D" class="hero-image">
+            <img src="info.png" alt="D&D информация" class="hero-image">
         </div>
     </div>
 </main>
@@ -360,27 +389,32 @@
         {
             name: "ВАРВАР",
             img: "varvar.png",
-            description: "<strong>Варвар</strong> - воин, чья сила рождается в ярости.<br>📖 <strong>Особенности:</strong> Классовая особенность «Ярость» даёт преимущество на силовые броски и сопротивление урону. Используют кости хитов d12.<br>⚔️ <strong>Для новичков:</strong> Простой и выносливый класс, отличный выбор для первого персонажа. Главное - впасть в ярость и крушить врагов!"
+            role: "tank",
+            description: "<strong>Варвар</strong> - воин, чья сила рождается в ярости.<br><br><strong>Особенности:</strong> «Ярость» даёт преимущество на силовые броски и сопротивление урону. Кость хитов d12.<br><br><strong>Для новичков:</strong> Простой и выносливый класс, отличный выбор для первого персонажа."
         },
         {
             name: "ПАЛАДИН",
             img: "паладин.png",
-            description: "<strong>Паладин</strong> - священный воин, следующий клятве.<br>📖 <strong>Особенности:</strong> Могут накладывать заклинания, исцелять и наносить огромный урон одной цели через «Божественную кару».<br>⚔️ <strong>Для новичков:</strong> Хороший баланс между атакой, защитой и поддержкой. Выбери клятву, которая тебе по душе!"
+            role: "tank",
+            description: "<strong>Паладин</strong> - священный воин, следующий клятве.<br><br><strong>Особенности:</strong> Накладывает заклинания, исцеляет и наносит огромный урон одной цели через «Божественную кару».<br><br><strong>Для новичков:</strong> Хороший баланс между атакой, защитой и поддержкой."
         },
         {
             name: "ПЛУТ",
             img: "plut.png",
-            description: "<strong>Плут</strong> - скрытный и смертоносный специалист.<br>📖 <strong>Особенности:</strong> «Скрытая атака» наносит дополнительные 2к6 урона, если есть преимущество. Экспертиза в навыках.<br>⚔️ <strong>Для новичков:</strong> Любишь быть незаметным и бить со спины? Плут - твой выбор. Не забывай про ловкость!"
+            role: "damage",
+            description: "<strong>Плут</strong> - скрытный и смертоносный специалист.<br><br><strong>Особенности:</strong> «Скрытая атака» наносит дополнительные 2к6 урона при преимуществе. Экспертиза в навыках.<br><br><strong>Для новичков:</strong> Любишь быть незаметным и бить со спины? Плут - твой выбор."
         },
         {
             name: "ВОЛШЕБНИК",
             img: "volshebnik.png",
-            description: "<strong>Волшебник</strong> - мастер заклинаний, черпающий силу из книг.<br>📖 <strong>Особенности:</strong> Может выучить больше всего заклинаний. Восстанавливает часть ячеек после короткого отдыха.<br>⚔️ <strong>Для новичков:</strong> Сложный, но гибкий класс. Советуем школу волшебства «Эвокация», чтобы не навредить друзьям огненным шаром."
+            role: "damage",
+            description: "<strong>Волшебник</strong> - мастер заклинаний, черпающий силу из книг.<br><br><strong>Особенности:</strong> Может выучить больше всего заклинаний. Восстанавливает часть ячеек после короткого отдыха.<br><br><strong>Для новичков:</strong> Сложный, но гибкий класс. Рекомендуется школа волшебства «Эвокация»."
         },
         {
             name: "БАРД",
             img: "bard.png",
-            description: "<strong>Бард</strong> - вдохновляющий артист и лицо партии.<br>📖 <strong>Особенности:</strong> «Вдохновение барда» даёт союзникам бонус к броскам. Магия барда разнообразна, эксперт в социальных навыках.<br>⚔️ <strong>Для новичков:</strong> Отличный класс, если хочешь много общаться и помогать команде. Выбирай заклинания поддержки и контроля."
+            role: "support",
+            description: "<strong>Бард</strong> - вдохновляющий артист и лицо партии.<br><br><strong>Особенности:</strong> «Вдохновение барда» даёт союзникам бонус к броскам. Магия барда разнообразна.<br><br><strong>Для новичков:</strong> Отличный класс для тех, кто хочет много общаться и помогать команде."
         }
     ];
 
@@ -388,43 +422,62 @@
         {
             name: "ЛЮДИ",
             img: "lud.png",
-            description: "<strong>Люди</strong> - самые амбициозные и приспосабливаемые.<br>📖 <strong>Особенности:</strong> +1 ко всем характеристикам (стандартный человек) или +1 к двум любым + навык (вариант).<br>🎭 <strong>Для новичков:</strong> Универсальная раса, подходит под любой класс. Хороший старт для первого персонажа."
+            role: "all",
+            description: "<strong>Люди</strong> - самые амбициозные и приспосабливаемые.<br><br><strong>Особенности:</strong> +1 ко всем характеристикам или +1 к двум любым + навык.<br><br><strong>Для новичков:</strong> Универсальная раса, подходит под любой класс."
         },
         {
             name: "ЭЛЬФЫ",
             img: "elf.png",
-            description: "<strong>Эльфы</strong> - древний народ, близкий к магии.<br>📖 <strong>Особенности:</strong> Транс (4 часа медитации вместо сна), преимущество против очарования, владение длинным луком.<br>🎭 <strong>Для новичков:</strong> Отлично подходят для магов, плутов и следопытов. Выбери суб расу (лесной, высший, тёмный)."
+            role: "damage",
+            description: "<strong>Эльфы</strong> - древний народ, близкий к магии.<br><br><strong>Особенности:</strong> Транс (4 часа медитации), преимущество против очарования, владение длинным луком.<br><br><strong>Для новичков:</strong> Отлично подходят для магов, плутов и следопытов."
         },
         {
             name: "ДВОРФЫ",
             img: "dworrf.png",
-            description: "<strong>Дворфы</strong> - выносливые горные мастера.<br>📖 <strong>Особенности:</strong> +2 к Телосложению, устойчивость к яду, владение боевыми топорами.<br>🎭 <strong>Для новичков:</strong> Идеальны для воинов, жрецов и паладинов. Очень живучие!"
+            role: "tank",
+            description: "<strong>Дворфы</strong> - выносливые горные мастера.<br><br><strong>Особенности:</strong> +2 к Телосложению, устойчивость к яду, владение боевыми топорами.<br><br><strong>Для новичков:</strong> Идеальны для воинов, жрецов и паладинов."
         },
         {
             name: "ПОЛУРОСЛИКИ",
             img: "polurosl.png",
-            description: "<strong>Полурослики (Халфлинги)</strong> - удачливые маленькие народцы.<br>📖 <strong>Особенности:</strong> «Удача» - можно перебросить единицу на d20. Преимущество против испуга.<br>🎭 <strong>Для новичков:</strong> Очень весёлая раса. Везение спасает в критических ситуациях. Хороши для плутов и бардов."
+            role: "support",
+            description: "<strong>Полурослики (Халфлинги)</strong> - удачливые маленькие народцы.<br><br><strong>Особенности:</strong> «Удача» - переброс единицы на d20. Преимущество против испуга.<br><br><strong>Для новичков:</strong> Везение спасает в критических ситуациях. Хороши для плутов и бардов."
         }
     ];
 
+    let currentClassFilter = "all";
+    let currentRaceFilter = "all";
+
     function renderNewbiePage() {
         return `
-            <h2 class="page-title">📖 НОВИЧКАМ: КАК СОЗДАТЬ ПЕРСОНАЖА</h2>
-            <div class="page-content-text">
-                <p><strong>Создание персонажа в D&D - это просто!</strong> Следуй инструкции:</p>
-                <ol style="margin-left: 24px; margin-top: 16px; margin-bottom: 20px;">
-                    <li><strong>Выбери расу</strong> - кто ты по происхождению</li>
-                    <li><strong>Выбери класс</strong> - чем ты занимаешься</li>
-                    <li><strong>Распредели характеристики</strong> - Сила, Ловкость, Телосложение, Интеллект, Мудрость, Харизма</li>
-                    <li><strong>Выбери навыки и снаряжение</strong> - что умеешь и с чем идёшь в бой</li>
-                    <li><strong>Заполни лист персонажа</strong> - ниже пример для ориентира</li>
-                </ol>
-                <div style="text-align: center; margin: 20px 0;">
-                    <img src="list.png" alt="Лист персонажа D&D" style="max-width: 100%; border-radius: 20px; border: 2px solid #8b0000;">
-                    <p style="margin-top: 12px; font-size: 0.9rem;">🎲 <em>Пример листа персонажа - распечатай и заполняй!</em></p>
+            <div class="two-columns">
+                <div class="main-content">
+                    <h2 class="page-title">НОВИЧКАМ: КАК СОЗДАТЬ ПЕРСОНАЖА</h2>
+                    <div class="page-content-text">
+                        <p>Создание персонажа в D&D - это просто. Следуй инструкции:</p>
+                        <ol style="margin-left: 22px; margin-top: 16px; margin-bottom: 20px;">
+                            <li><strong>Выбери расу</strong> - кто ты по происхождению</li>
+                            <li><strong>Выбери класс</strong> - чем ты занимаешься</li>
+                            <li><strong>Распредели характеристики</strong> - Сила, Ловкость, Телосложение, Интеллект, Мудрость, Харизма</li>
+                            <li><strong>Выбери навыки и снаряжение</strong> - что умеешь и с чем идёшь в бой</li>
+                            <li><strong>Заполни лист персонажа</strong> - ниже пример для ориентира</li>
+                        </ol>
+                        <div style="text-align: center; margin: 20px 0;">
+                            <img src="list.png" alt="Лист персонажа D&D" style="max-width: 100%; border-radius: 8px; border: 1px solid #2c1a1a;">
+                        </div>
+                    </div>
                 </div>
-                <div class="info-tip">
-                    💡 <strong>Совет новичку:</strong> Не бойся экспериментировать! Ошибки - часть приключения.
+                <div class="sidebar">
+                    <div class="ready-characters">
+                        <h3>ГОТОВЫЕ ПЕРСОНАЖИ</h3>
+                        <ul>
+                            <li onclick="window.open('paladin.pdf', '_blank')">ПАЛАДИН</li>
+                            <li onclick="window.open('varvar.pdf', '_blank')">ВАРВАР</li>
+                            <li onclick="window.open('plut.pdf', '_blank')">ПЛУТ</li>
+                            <li onclick="window.open('bard.pdf', '_blank')">БАРД</li>
+                            <li onclick="window.open('volshebnik.pdf', '_blank')">ВОЛШЕБНИК</li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         `;
@@ -434,24 +487,21 @@
         return `
             <div class="two-columns">
                 <div class="main-content">
-                    <h2 class="page-title">🏠 ДОБРО ПОЖАЛОВАТЬ НА ГЛАВНУЮ СТРАНИЦУ «ДВАДЦАТКИ»!</h2>
+                    <h2 class="page-title">ДОБРО ПОЖАЛОВАТЬ В «ДВАДЦАТКУ»</h2>
                     <div class="page-content-text">
-                        <p>Здесь вы найдёте всю необходимую информацию для новичков о игре <strong>Dungeons & Dragons (D&D)</strong>.</p>
+                        <p>Здесь вы найдёте всю необходимую информацию для новичков о игре Dungeons & Dragons (D&D).</p>
                         <p>Мы помогаем сделать первый шаг в мир фэнтези, где кубик d20 решает судьбы героев.</p>
-                        <div class="info-tip">
-                            🔥 <strong>Начни с раздела «НОВИЧКАМ»</strong> - там есть пошаговая инструкция и готовый лист персонажа!
-                        </div>
                     </div>
                 </div>
                 <div class="sidebar">
                     <div class="ready-characters">
-                        <h3>🎭 ГОТОВЫЕ ПЕРСОНАЖИ ДЛЯ НОВИЧКОВ</h3>
+                        <h3>ГОТОВЫЕ ПЕРСОНАЖИ</h3>
                         <ul>
-                            <li onclick="window.open('paladin.pdf', '_blank')">🛡️ ПАЛАДИН</li>
-                            <li onclick="window.open('varvar.pdf', '_blank')">⚔️ ВАРВАР</li>
-                            <li onclick="window.open('plut.pdf', '_blank')">🗡️ ПЛУТ</li>
-                            <li onclick="window.open('bard.pdf', '_blank')">🎶 БАРД</li>
-                            <li onclick="window.open('volshebnik.pdf', '_blank')">🔮 ВОЛШЕБНИК</li>
+                            <li onclick="window.open('paladin.pdf', '_blank')">ПАЛАДИН</li>
+                            <li onclick="window.open('varvar.pdf', '_blank')">ВАРВАР</li>
+                            <li onclick="window.open('plut.pdf', '_blank')">ПЛУТ</li>
+                            <li onclick="window.open('bard.pdf', '_blank')">БАРД</li>
+                            <li onclick="window.open('volshebnik.pdf', '_blank')">ВОЛШЕБНИК</li>
                         </ul>
                     </div>
                 </div>
@@ -460,49 +510,69 @@
     }
 
     function renderClassesPage() {
-        let html = `<h2 class="page-title">⚔️ КЛАССЫ ПЕРСОНАЖЕЙ</h2>
-                    <div class="page-content-text"><p>Нажми на любой класс, чтобы узнать подробности:</p></div>
-                    <div class="items-grid">`;
-        classesData.forEach((item, idx) => {
+        let filteredData = classesData;
+        if (currentClassFilter !== "all") {
+            filteredData = classesData.filter(item => item.role === currentClassFilter);
+        }
+
+        let html = `<h2 class="page-title">КЛАССЫ ПЕРСОНАЖЕЙ</h2>
+                    <div class="filter-bar">
+                        <button class="filter-btn ${currentClassFilter === "all" ? "active" : ""}" data-filter="all">ВСЕ</button>
+                        <button class="filter-btn ${currentClassFilter === "tank" ? "active" : ""}" data-filter="tank">ТАНК</button>
+                        <button class="filter-btn ${currentClassFilter === "damage" ? "active" : ""}" data-filter="damage">УРОН</button>
+                        <button class="filter-btn ${currentClassFilter === "support" ? "active" : ""}" data-filter="support">ПОДДЕРЖКА</button>
+                    </div>
+                    <div class="items-grid" id="classes-grid">`;
+        
+        filteredData.forEach((item, idx) => {
             html += `
                 <div class="item-card" data-type="class" data-index="${idx}">
-                    <img src="${item.img}" alt="${item.name}" class="item-image" onerror="this.src='https://placehold.co/400x300/1a1a1a/8b0000?text=${encodeURIComponent(item.name)}'">
+                    <img src="${item.img}" alt="${item.name}" class="item-image" onerror="this.src='https://placehold.co/400x300/0f0f13/8b0000?text=${encodeURIComponent(item.name)}'">
                     <div class="item-name">${item.name}</div>
                     <div class="item-description" id="class-desc-${idx}"><p>${item.description}</p></div>
                 </div>
             `;
         });
-        html += `</div><div class="info-tip">⚡ Выбери свой первый класс и начни приключение!</div>`;
+        html += `</div>`;
         return html;
     }
 
     function renderRacesPage() {
-        let html = `<h2 class="page-title">🧝 РАСЫ D&D</h2>
-                    <div class="page-content-text"><p>Нажми на расу, чтобы узнать её особенности:</p></div>
-                    <div class="items-grid">`;
-        racesData.forEach((item, idx) => {
+        let filteredData = racesData;
+        if (currentRaceFilter !== "all") {
+            filteredData = racesData.filter(item => item.role === currentRaceFilter);
+        }
+
+        let html = `<h2 class="page-title">РАСЫ D&D</h2>
+                    <div class="filter-bar">
+                        <button class="filter-btn ${currentRaceFilter === "all" ? "active" : ""}" data-filter="all">ВСЕ</button>
+                        <button class="filter-btn ${currentRaceFilter === "tank" ? "active" : ""}" data-filter="tank">ТАНК</button>
+                        <button class="filter-btn ${currentRaceFilter === "damage" ? "active" : ""}" data-filter="damage">УРОН</button>
+                        <button class="filter-btn ${currentRaceFilter === "support" ? "active" : ""}" data-filter="support">ПОДДЕРЖКА</button>
+                        <button class="filter-btn ${currentRaceFilter === "all" ? "active" : ""}" data-filter="all">УНИВЕРСАЛЫ</button>
+                    </div>
+                    <div class="items-grid" id="races-grid">`;
+        
+        filteredData.forEach((item, idx) => {
             html += `
                 <div class="item-card" data-type="race" data-index="${idx}">
-                    <img src="${item.img}" alt="${item.name}" class="item-image" onerror="this.src='https://placehold.co/400x300/1a1a1a/8b0000?text=${encodeURIComponent(item.name)}'">
+                    <img src="${item.img}" alt="${item.name}" class="item-image" onerror="this.src='https://placehold.co/400x300/0f0f13/8b0000?text=${encodeURIComponent(item.name)}'">
                     <div class="item-name">${item.name}</div>
                     <div class="item-description" id="race-desc-${idx}"><p>${item.description}</p></div>
                 </div>
             `;
         });
-        html += `</div><div class="info-tip">💡 Сочетание расы и класса создаёт уникального героя!</div>`;
+        html += `</div>`;
         return html;
     }
 
     function renderContactsPage() {
         return `
-            <h2 class="page-title">📞 ПРИСОЕДИНЯЙТЕСЬ, ЕСЛИ НЕ БОИТЕСЬ, ЧТО ВАШИ ТЕНИ ТОЖЕ НАЧНУТ ДВИГАТЬСЯ</h2>
+            <h2 class="page-title">КОНТАКТЫ</h2>
             <div class="contacts-info">
-                <p>💬 <strong>Telegram:</strong> <a href="https://t.me/nick_Juice" target="_blank">https://t.me/nick_Juice</a></p>
-                <p>🌐 <strong>MAX:</strong> <a href="http://6max.ru/nick_juice" target="_blank">http://6max.ru/nick_juice</a></p>
-                <p>📘 <strong>ВК (VK):</strong> <a href="https://vk.ru/nick_juice" target="_blank">https://vk.ru/nick_juice</a></p>
-                <div class="info-tip">
-                    🎲 Присоединяйся к нашему сообществу! Здесь можно многое почерпнуть для себя!
-                </div>
+                <p><strong>Telegram:</strong> <a href="https://t.me/nick_Juice" target="_blank">https://t.me/nick_Juice</a></p>
+                <p><strong>MAX:</strong> <a href="http://6max.ru/nick_juice" target="_blank">http://6max.ru/nick_juice</a></p>
+                <p><strong>ВК:</strong> <a href="https://vk.ru/nick_juice" target="_blank">https://vk.ru/nick_juice</a></p>
             </div>
         `;
     }
@@ -512,31 +582,82 @@
             const idx = card.getAttribute('data-index');
             const descDiv = document.getElementById(`class-desc-${idx}`);
             if (descDiv) {
-                card.addEventListener('click', (e) => {
+                card.removeEventListener('click', card.clickHandler);
+                card.clickHandler = (e) => {
                     if (e.target.closest('.item-description')) return;
                     document.querySelectorAll('.item-description').forEach(desc => {
                         if (desc !== descDiv) desc.classList.remove('show');
                     });
                     descDiv.classList.toggle('show');
-                });
+                };
+                card.addEventListener('click', card.clickHandler);
             }
         });
         document.querySelectorAll('.item-card[data-type="race"]').forEach(card => {
             const idx = card.getAttribute('data-index');
             const descDiv = document.getElementById(`race-desc-${idx}`);
             if (descDiv) {
-                card.addEventListener('click', (e) => {
+                card.removeEventListener('click', card.clickHandler);
+                card.clickHandler = (e) => {
                     if (e.target.closest('.item-description')) return;
                     document.querySelectorAll('.item-description').forEach(desc => {
                         if (desc !== descDiv) desc.classList.remove('show');
                     });
                     descDiv.classList.toggle('show');
-                });
+                };
+                card.addEventListener('click', card.clickHandler);
             }
         });
     }
 
-    function showPage(sectionId) {
+    function attachFilterHandlers(sectionId) {
+        const filterBtns = document.querySelectorAll('.filter-btn');
+        filterBtns.forEach(btn => {
+            btn.removeEventListener('click', filterHandler);
+            btn.addEventListener('click', filterHandler);
+        });
+
+        function filterHandler(e) {
+            const filterValue = e.currentTarget.getAttribute('data-filter');
+            if (sectionId === 'classes') {
+                currentClassFilter = filterValue;
+                const newHtml = renderClassesPage();
+                const tempDiv = document.createElement('div');
+                tempDiv.innerHTML = newHtml;
+                const newGrid = tempDiv.querySelector('.items-grid');
+                const oldGrid = document.querySelector('.items-grid');
+                if (oldGrid && newGrid) {
+                    oldGrid.outerHTML = newGrid.outerHTML;
+                }
+                const newFilterBar = tempDiv.querySelector('.filter-bar');
+                const oldFilterBar = document.querySelector('.filter-bar');
+                if (oldFilterBar && newFilterBar) {
+                    oldFilterBar.outerHTML = newFilterBar.outerHTML;
+                }
+                attachCardHandlers();
+                attachFilterHandlers('classes');
+            } else if (sectionId === 'races') {
+                currentRaceFilter = filterValue;
+                const newHtml = renderRacesPage();
+                const tempDiv = document.createElement('div');
+                tempDiv.innerHTML = newHtml;
+                const newGrid = tempDiv.querySelector('.items-grid');
+                const oldGrid = document.querySelector('.items-grid');
+                if (oldGrid && newGrid) {
+                    oldGrid.outerHTML = newGrid.outerHTML;
+                }
+                const newFilterBar = tempDiv.querySelector('.filter-bar');
+                const oldFilterBar = document.querySelector('.filter-bar');
+                if (oldFilterBar && newFilterBar) {
+                    oldFilterBar.outerHTML = newFilterBar.outerHTML;
+                }
+                attachCardHandlers();
+                attachFilterHandlers('races');
+            }
+        }
+    }
+
+    function showPage(sectionId, skipScroll = false) {
         let html = '';
         switch(sectionId) {
             case 'home':
@@ -560,10 +681,15 @@
         contentContainer.innerHTML = html;
         
         if (sectionId === 'classes' || sectionId === 'races') {
-            setTimeout(attachCardHandlers, 10);
+            setTimeout(() => {
+                attachCardHandlers();
+                attachFilterHandlers(sectionId);
+            }, 10);
         }
         
-        document.getElementById('dynamicContent').scrollIntoView({ behavior: 'smooth', block: 'start' });
+        if (!skipScroll) {
+            document.getElementById('dynamicContent').scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
     }
 
     const btns = document.querySelectorAll('.dnd-btn');
